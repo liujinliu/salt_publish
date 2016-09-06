@@ -9,7 +9,7 @@ EXCUTE_CMD = 'cmd'
 CHECK_CMD = 'check_cmd'
 ESPECT = 'check_espect'
 
-class LePublish(object):
+class Play(object):
     
     
     def __init__(self, salt_key, config_path,
@@ -70,8 +70,8 @@ class LePublish(object):
         return True
 
 if __name__ == '__main__':
-    le = LePublish('target-host',
+    tmp = Play('target-host',
          '../playbooks',
          extra=dict(filename='tmpfile'))
-    print le.publish()
+    print tmp.publish()
 
