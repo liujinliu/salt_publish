@@ -1,0 +1,19 @@
+- make_tmp_file:
+    - excute: 
+        cmd: "touch /home/liujinliu/tmp12"
+        check_cmd: "ls /home/liujinliu/tmp12"
+        check_espect: 
+            true: "tmp12"
+            false: "tmp23"
+    - excute:
+        cmd: "touch /home/liujinliu/tmp13"
+        check_cmd: "ls /home/liujinliu/tmp13"
+        check_espect: 
+            true: "tmp13"
+            false: "tttmp"
+- echo_to_file:
+    - excute:
+        cmd: "echo 1111 >/home/liujinliu/%(filename)s"
+        check_cmd: "cat /home/liujinliu/%(filename)s"
+        check_espect: 
+            true: "1111"
